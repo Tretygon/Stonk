@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fišiš\\Source\\Repos\\Stonk\\Stonk\\Stonk.csproj": {}
+    "C:\\Users\\Tomas\\Desktop\\Stonk\\Stonk\\Stonk.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fišiš\\Source\\Repos\\Stonk\\Stonk\\Stonk.csproj": {
+    "C:\\Users\\Tomas\\Desktop\\Stonk\\Stonk\\Stonk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fišiš\\Source\\Repos\\Stonk\\Stonk\\Stonk.csproj",
+        "projectUniqueName": "C:\\Users\\Tomas\\Desktop\\Stonk\\Stonk\\Stonk.csproj",
         "projectName": "Stonk",
-        "projectPath": "C:\\Users\\Fišiš\\Source\\Repos\\Stonk\\Stonk\\Stonk.csproj",
-        "packagesPath": "C:\\Users\\Fišiš\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fišiš\\Source\\Repos\\Stonk\\Stonk\\obj\\",
+        "projectPath": "C:\\Users\\Tomas\\Desktop\\Stonk\\Stonk\\Stonk.csproj",
+        "packagesPath": "C:\\Users\\Tomas\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Tomas\\Desktop\\Stonk\\Stonk\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Fišiš\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

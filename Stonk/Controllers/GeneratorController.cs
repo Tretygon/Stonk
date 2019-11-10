@@ -53,6 +53,7 @@ namespace Stonks.Controllers
                 _context.Update(item);
             }         
             await _context.SaveChangesAsync();
+            Ticks++;
 
         }
 
@@ -64,6 +65,15 @@ namespace Stonks.Controllers
         {
             var tmp = LastIteration; //cache the collection
             return View(tmp);
+
+        }
+
+        [HttpGet("{id}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CurrentSingleStock(int id)
+        {
+            var tmp = LastIteration;                 //cache the collection
+            return View(tmp.Find(x=> x.id == id));
 
         }
 
