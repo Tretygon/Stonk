@@ -38,7 +38,7 @@ namespace Stonks.Controllers
             _context = context;
 
             LastIteration = context.Stock.ToList();
-            Dependencies = new List<StockDependency>();
+            Dependencies = new List<StockDependency>();  //TODO add dependencies
             timer.Elapsed +=  async (a,e) => await OneTick();
 
         }
@@ -53,6 +53,17 @@ namespace Stonks.Controllers
                 _context.Update(item);
             }         
             await _context.SaveChangesAsync();
+
+        }
+
+
+        // Get: Generator/CurrentGameState
+        [HttpGet]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CurrentGameState()
+        {
+            var tmp = LastIteration; //cache the collection
+            return View(tmp);
 
         }
 
@@ -131,7 +142,7 @@ namespace Stonks.Controllers
                 {
                     var tmp = stock;
 
-                    var modif = deps.GetValueOrDefault(tmp.id, 0.0) + trans.GetValueOrDefault(tmp.id, 0);    // TODO smoothen
+                    var modif = deps.GetValueOrDefault(tmp.id, 0.0) + trans.GetValueOrDefault(tmp.id, 0)/2;    // TODO smoothen
                     tmp = Generator.RandomlyModify(tmp, modif);
                     buffer.Add(tmp);
                 }
