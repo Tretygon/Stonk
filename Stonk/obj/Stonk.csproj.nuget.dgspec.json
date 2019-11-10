@@ -1,24 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tomas\\Downloads\\MVP\\Stonk\\Stonk\\Stonk.csproj": {}
+    "C:\\Users\\spidoosho\\Desktop\\Stonk\\Stonk\\Stonk.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tomas\\Downloads\\MVP\\Stonk\\Stonk\\Stonk.csproj": {
+    "C:\\Users\\spidoosho\\Desktop\\Stonk\\Stonk\\Stonk.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomas\\Downloads\\MVP\\Stonk\\Stonk\\Stonk.csproj",
+        "projectUniqueName": "C:\\Users\\spidoosho\\Desktop\\Stonk\\Stonk\\Stonk.csproj",
         "projectName": "Stonk",
-        "projectPath": "C:\\Users\\Tomas\\Downloads\\MVP\\Stonk\\Stonk\\Stonk.csproj",
-        "packagesPath": "C:\\Users\\Tomas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomas\\Downloads\\MVP\\Stonk\\Stonk\\obj\\",
+        "projectPath": "C:\\Users\\spidoosho\\Desktop\\Stonk\\Stonk\\Stonk.csproj",
+        "packagesPath": "C:\\Users\\spidoosho\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\spidoosho\\Desktop\\Stonk\\Stonk\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Tomas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\spidoosho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
