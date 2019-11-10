@@ -47,7 +47,7 @@ namespace Stonks.Controllers
 
         async Task OneTick()
         {
-            Generate(LastIteration);
+            Generate();
             foreach (var item in LastIteration)
             {
                 _context.Update(item);
@@ -119,16 +119,15 @@ namespace Stonks.Controllers
 
         }
 
-
-        void Generate(List<Stock> lastIteration)
+        void Generate()
         {
             var trans = transactions;
             transactions = new ConcurrentDictionary<int, int>();
             for (int i = 0; i < IterationsPerTicks; i++)
             {
                 var buffer = new List<Stock>();
-                var deps = PropagateDependencies(lastIteration, Dependencies);
-                foreach (var stock in lastIteration)
+                var deps = PropagateDependencies(LastIteration, Dependencies);
+                foreach (var stock in LastIteration)
                 {
                     var tmp = stock;
 
@@ -136,7 +135,7 @@ namespace Stonks.Controllers
                     tmp = Generator.RandomlyModify(tmp, modif);
                     buffer.Add(tmp);
                 }
-                lastIteration = buffer;
+                LastIteration = buffer;
                 buffer = new List<Stock>();
                 trans.Clear();
             }
