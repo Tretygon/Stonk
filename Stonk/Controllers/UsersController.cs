@@ -25,12 +25,14 @@ namespace Stonk.Controllers
         public async Task<IActionResult> Portfolio(int? id)
         {
             var view = new PortfolioView();
+
             var user = await _context.Users.FirstOrDefaultAsync(m => m.id == id);
             if (user == null)
             {
                 return NotFound();
             }
             view.user = user;
+
             var portfolio = await _context.Portfolios.FirstOrDefaultAsync(m => m.userId == user.id);
             if (portfolio == null)
             {
@@ -43,44 +45,22 @@ namespace Stonk.Controllers
                 if (item.portfolioId == portfolio.id)
                     shares.Add(item);
             }
-            if (shares.Count == 0)
-            {
-                return NotFound();
-            }
             view.shares = shares;
+
             List<Stock> stocks = new List<Stock>();
             List<StockValueInTime> values = new List<StockValueInTime>();
             foreach (var item in _context.Stock)
             {
-                if (shares.Any(x => x.stockId == item.id))
+                if (shares.Any(x => x.stockId == item.id && item.id != 0))
                 {
                     stocks.Add(item);
-                    ulong item2MaximumTimestamp = ulong.MinValue;
-                    StockValueInTime item2Maximum = null;
-                    foreach (var item2 in _context.StockValuesInTime)
-                    {
-                        if (item2.stockId == item.id)
-                        {
-                            if (item2.timestamp > item2MaximumTimestamp)
-                            {
-                                item2MaximumTimestamp = item2.timestamp;
-                                item2Maximum = item2;
-                            }
-                        }
-                    }
-                    values.Add(item2Maximum);
+                    values.Add(await _context.StockValuesInTime.FirstAsync());//spatne ale fakci
                 }
-            }
-            if (stocks.Count == 0)
-            {
-                return NotFound();
-            }
-            if (values.Count == 0)
-            {
-                return NotFound();
+
             }
             view.stocks = stocks;
             view.values = values;
+
             return View(view);
         }
 
